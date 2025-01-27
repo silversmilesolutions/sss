@@ -90,7 +90,7 @@ export function SetupSteps() {
         <img
           src="/arrow-right.svg"
           alt=""
-          style={{ marginLeft: "8px", verticalAlign: "middle" }}
+          style={{ verticalAlign: "middle" }}
         />
       </Button>
     </Section>

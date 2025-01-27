@@ -9,6 +9,7 @@ export const theme = {
     gray200: "#d0d0d0",
     white: "#FFFFFF",
     mainGray: "#090F32",
+    primaryGray: "#F3F7F8",
   },
   fonts: {
     body: "Outfit, system-ui, sans-serif",
