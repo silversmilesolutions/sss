@@ -4,6 +4,8 @@ export const theme = {
     background: "#FFFFFF",
     brand: {
       primary: "#FF733B",
+      secondary: "#0068FF",
+      third: "#FFCF01",
       fourth: "#57F2D0",
     },
     gray200: "#d0d0d0",

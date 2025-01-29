@@ -1,6 +1,7 @@
 import {
   Container,
   Copyright,
+  FooterOverlay,
   FooterWrapper,
   Logo,
   Nav,
@@ -13,36 +14,66 @@ import Image from "next/image";
 export function Footer() {
   return (
     <FooterWrapper>
+      <FooterOverlay></FooterOverlay>
       <Container>
-        <Logo>
-          <Image
-            src="/logo.svg"
-            alt="Logo"
-            width={40}
-            height={40}
-          />
-          SilverSmileSolutions
-        </Logo>
-        <Nav>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/services">Services</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
-        </Nav>
-        <SocialLinks>
-          <SocialLink href="#" aria-label="Facebook">
-            <i className="fab fa-facebook"></i> FB
-          </SocialLink>
-          <SocialLink href="#" aria-label="Twitter">
-            <i className="fab fa-twitter"></i> X
-          </SocialLink>
-          <SocialLink href="#" aria-label="LinkedIn">
-            <i className="fab fa-linkedin"></i> ID
-          </SocialLink>
-        </SocialLinks>
-        <Copyright>
-          &copy; 2025 SilverSmileSolutions. All rights reserved.
-        </Copyright>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            minWidth: "1000px",
+            borderBottom: "1px solid #d0d0d0",
+          }}
+        >
+          <Logo>
+            <Image src="/logo.svg" alt="Logo" width={25} height={25} />
+            &nbsp; SilverSmileSolutions
+          </Logo>
+          <Nav>
+            <NavLink href="/blog">Blog</NavLink>
+            <NavLink href="/contact">Contact Us</NavLink>
+          </Nav>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            minWidth: "1000px",
+            paddingTop: "1rem 0",
+          }}
+        >
+          <Copyright>
+            &copy; SilverSmileSolutions 2025 | All rights reserved
+          </Copyright>
+          <SocialLinks>
+            <SocialLink href="#" aria-label="Facebook">
+              <Image
+                src="/social/fb.svg"
+                alt="Facebook"
+                width={20}
+                height={20}
+              />
+            </SocialLink>
+            <SocialLink href="#" aria-label="LinkedIn">
+              <Image
+                src="/social/insta.svg"
+                alt="LinkedIn"
+                width={20}
+                height={20}
+              />
+            </SocialLink>
+            <SocialLink href="#" aria-label="Twitter">
+              <Image src="/social/x.svg" alt="Twitter" width={20} height={20} />
+            </SocialLink>
+            <SocialLink href="#" aria-label="LinkedIn">
+              <Image
+                src="/social/linkedin.svg"
+                alt="LinkedIn"
+                width={20}
+                height={20}
+              />
+            </SocialLink>
+          </SocialLinks>
+        </div>
       </Container>
     </FooterWrapper>
   );

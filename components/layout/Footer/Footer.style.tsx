@@ -3,7 +3,22 @@ import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
   background-color: ${({ theme }) => theme.colors.backgroundAlt};
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
+  position: relative;
+`;
+
+export const FooterOverlay = styled.div`
+  background: linear-gradient(
+    to top,
+    ${({ theme }) => `${theme.colors.brand.secondary}1A`},
+    transparent
+  );
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  width: 100%;
 `;
 
 export const Container = styled.div`
