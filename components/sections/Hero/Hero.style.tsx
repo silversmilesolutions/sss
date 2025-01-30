@@ -16,10 +16,14 @@ export const HeroSection = styled.section`
   text-align: center;
   padding: 1rem 0;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 1rem;
+  }
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   max-width: 800px;
 
@@ -40,4 +44,22 @@ export const ButtonGroup = styled.div`
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+`;
+
+export const HeroImage = styled.img`
+  position: absolute;
+  top: 26.5rem;
+  width: 840px;
+  content: url("/hero-image.png");
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    top: 34rem;
+    width: 64%;
+    content: url("/hero-mobile-image.png");
+  }
 `;
