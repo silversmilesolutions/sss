@@ -7,6 +7,11 @@ import {
   FeatureContent,
   FeatureTitle,
   FeatureDescription,
+  MobileIconWrapper,
+  FeatureImage,
+  FeatureDetails,
+  FeatureTitleMobile,
+  ButtonContainer,
 } from "./Features.style";
 import Image from "next/image";
 
@@ -52,20 +57,23 @@ const features = [
 export function Features() {
   return (
     <FeaturesSection>
-      <Image
-        src="/horn.svg"
-        alt="Features Horn"
-        width={92}
-        height={92}
-        style={{ position: "absolute", top: "6rem", right: "4rem" }}
-      />
-      <Image
-        src="/users.svg"
-        alt="Features Users"
-        width={92}
-        height={92}
-        style={{ position: "absolute", bottom: "4rem", left: "4rem" }}
-      />
+      <MobileIconWrapper>
+        <Image
+          src="/horn.svg"
+          alt="Features Horn"
+          width={92}
+          height={92}
+          style={{ position: "absolute", top: "6rem", right: "4rem" }}
+        />
+        <Image
+          src="/users.svg"
+          alt="Features Users"
+          width={92}
+          height={92}
+          style={{ position: "absolute", bottom: "4rem", left: "4rem" }}
+        />
+      </MobileIconWrapper>
+
       <Title>
         Everything You Need To
         <br />
@@ -74,21 +82,26 @@ export function Features() {
       <Grid>
         {features.map((feature) => (
           <FeatureCard key={feature.title}>
-            <Image
-              src={feature.icon}
-              alt={feature.title}
-              width={65}
-              height={65}
-              style={{ minWidth: "65px" }}
-            />
-            <FeatureContent>
+            <FeatureImage>
+              <Image
+                src={feature.icon}
+                alt={feature.title}
+                width={65}
+                height={65}
+                style={{ minWidth: "65px" }}
+              />
+              <FeatureTitleMobile>{feature.title}</FeatureTitleMobile>
+            </FeatureImage>
+            <FeatureDetails>
               <FeatureTitle>{feature.title}</FeatureTitle>
-              <FeatureDescription>{feature.description}</FeatureDescription>
-            </FeatureContent>
+              <FeatureContent>
+                <FeatureDescription>{feature.description}</FeatureDescription>
+              </FeatureContent>
+            </FeatureDetails>
           </FeatureCard>
         ))}
       </Grid>
-      <div style={{ textAlign: "center", marginTop: "4rem" }}>
+      <ButtonContainer>
         <Button variant="primary">
           Get Started Today{" "}
           <img
@@ -97,7 +110,7 @@ export function Features() {
             style={{ verticalAlign: "middle" }}
           />
         </Button>
-      </div>
+      </ButtonContainer>
     </FeaturesSection>
   );
 }

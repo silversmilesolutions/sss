@@ -78,5 +78,6 @@ export const MobileNav = styled.nav<{ $isOpen: boolean }>`
     visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     border-bottom: 1px solid ${({ theme }) => theme.colors.gray200};
+    z-index: 1;
   }
 `;
