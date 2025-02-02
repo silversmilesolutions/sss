@@ -3,6 +3,9 @@ import Image from "next/image";
 
 export const Section = styled.section`
   padding: 4rem 0 0 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 2rem;
+  }
 `;
 
 export const Title = styled.h2`
@@ -10,6 +13,9 @@ export const Title = styled.h2`
   font-weight: 500;
   text-align: center;
   margin-bottom: 2rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 2rem;
+  }
 `;
 
 export const TestimonialsWrapper = styled.div`
@@ -34,6 +40,10 @@ export const TestimonialCard = styled.div<{ $index?: number }>`
     $index === 0 ? "0 1rem 1rem 0" : $index === 1 ? "1rem" : "1rem 0 0 1rem"};
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   position: relative;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    border-radius: 1rem;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const Avatar = styled(Image)`
@@ -67,4 +77,50 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 4rem;
+`;
+
+export const SliderWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-top: 3rem;
+  }
+`;
+
+export const SliderContainer = styled.div`
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 5rem;
+`;
+
+export const Slide = styled.div`
+  min-width: 100%;
+  box-sizing: border-box;
+`;
+
+export const ArrowButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(to right, #a977f6, #6d18ef);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.left {
+    left: -1rem;
+  }
+
+  &.right {
+    right: -1rem;
+  }
 `;

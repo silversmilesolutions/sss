@@ -8,6 +8,8 @@ import {
   NavLink,
   SocialLink,
   SocialLinks,
+  FooterContainer,
+  SocialLinksContainer,
 } from "./Footer.style";
 import Image from "next/image";
 
@@ -16,14 +18,7 @@ export function Footer() {
     <FooterWrapper>
       <FooterOverlay></FooterOverlay>
       <Container>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            minWidth: "1000px",
-            borderBottom: "1px solid #d0d0d0",
-          }}
-        >
+        <FooterContainer>
           <Logo>
             <Image src="/logo.svg" alt="Logo" width={25} height={25} />
             &nbsp; SilverSmileSolutions
@@ -32,15 +27,8 @@ export function Footer() {
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contact">Contact Us</NavLink>
           </Nav>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            minWidth: "1000px",
-            paddingTop: "1rem 0",
-          }}
-        >
+        </FooterContainer>
+        <SocialLinksContainer>
           <Copyright>
             &copy; SilverSmileSolutions 2025 | All rights reserved
           </Copyright>
@@ -49,31 +37,31 @@ export function Footer() {
               <Image
                 src="/social/fb.svg"
                 alt="Facebook"
-                width={20}
-                height={20}
+                width={30}
+                height={30}
               />
             </SocialLink>
             <SocialLink href="#" aria-label="LinkedIn">
               <Image
                 src="/social/insta.svg"
                 alt="LinkedIn"
-                width={20}
-                height={20}
+                width={30}
+                height={30}
               />
             </SocialLink>
             <SocialLink href="#" aria-label="Twitter">
-              <Image src="/social/x.svg" alt="Twitter" width={20} height={20} />
+              <Image src="/social/x.svg" alt="Twitter" width={30} height={30} />
             </SocialLink>
             <SocialLink href="#" aria-label="LinkedIn">
               <Image
                 src="/social/linkedin.svg"
                 alt="LinkedIn"
-                width={20}
-                height={20}
+                width={30}
+                height={30}
               />
             </SocialLink>
           </SocialLinks>
-        </div>
+        </SocialLinksContainer>
       </Container>
     </FooterWrapper>
   );

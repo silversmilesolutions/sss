@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const FeaturesSection = styled.section`
   padding: 4rem 0;
   position: relative;
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding: 2rem 0;
+  }
 `;
 
 export const Title = styled.h2`
