@@ -42,12 +42,19 @@ export const Nav = styled.nav`
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    justify-content: space-around;
+  }
 `;
 
 export const NavLink = styled(Link)`
   color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   font-weight: 500;
+  background-color: ${({ theme }) => theme.colors.white};
+  padding: 0.5rem 1rem;
+  border-radius: 52px;
+  z-index: 1;
 
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
@@ -58,6 +65,10 @@ export const SocialLinks = styled.div`
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    justify-content: center;
+  }
 `;
 
 export const SocialLink = styled(Link)`
@@ -68,4 +79,27 @@ export const SocialLink = styled(Link)`
 export const Copyright = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
   text-align: center;
+`;
+
+export const FooterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d0d0d0;
+  flex-direction: column;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    min-width: 1000px;
+    flex-direction: row;
+  }
+`;
+
+export const SocialLinksContainer = styled.div`
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column-reverse;
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    min-width: 1000px;
+    justify-content: space-between;
+    min-width: 1000px;
+  }
 `;

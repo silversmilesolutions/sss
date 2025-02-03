@@ -5,6 +5,7 @@ import {
   Subtitle,
   Title,
   HeroWrapper,
+  HeroImage,
 } from "./Hero.style";
 
 export function Hero() {
@@ -52,12 +53,7 @@ export function Hero() {
             Watch Video
           </Button>
         </ButtonGroup>
-        <img
-          src="/hero-image.png"
-          alt="Hero image"
-          width={840}
-          style={{ position: "absolute", top: "26.5rem" }}
-        />
+        <HeroImage alt="Hero image" />
       </HeroSection>
     </HeroWrapper>
   );

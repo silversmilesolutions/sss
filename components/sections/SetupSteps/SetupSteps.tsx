@@ -7,6 +7,9 @@ import {
   StepsList,
   Title,
   TitleContainer,
+  ImageWrapper,
+  MobileStepContent,
+  MobileOnlySpan,
 } from "./SetupSteps.style";
 import Image from "next/image";
 import { useState } from "react";
@@ -45,31 +48,65 @@ export function SetupSteps() {
           <br />
           Than 5 Minutes
         </Title>
-        <Image src="/chart-icon.svg" alt="Chart Icon" width={92} height={92} />
+        <ImageWrapper>
+          <Image
+            src="/chart-icon.svg"
+            alt="Chart Icon"
+            width={92}
+            height={92}
+          />
+        </ImageWrapper>
       </TitleContainer>
 
       <StepsContainer>
         <StepsList>
           {steps.map((step, index) => (
-            <Step
-              key={index}
-              onClick={() => setSelectedStep(index)}
-              $isSelected={selectedStep === index}
-            >
-              {step.title}
-            </Step>
+            <>
+              <Step
+                key={index}
+                onClick={() => setSelectedStep(index)}
+                $isSelected={selectedStep === index}
+              >
+                <span>{step.title}</span>
+                <MobileOnlySpan>
+                  {selectedStep === index ? "x" : "+"}
+                </MobileOnlySpan>
+              </Step>
+              {selectedStep === index && (
+                <MobileStepContent>
+                  <p
+                    style={{
+                      marginBottom: "1rem",
+                      textAlign: "center",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Search Engine Optimization (SEO) is a vital component of
+                    marketing strategies.
+                  </p>
+                  <Image
+                    src={`/setup${steps[selectedStep].image}`}
+                    alt={`Setup - ${steps[selectedStep].title}`}
+                    width={600}
+                    height={400}
+                  />
+                </MobileStepContent>
+              )}
+            </>
           ))}
         </StepsList>
 
         <ImageContainer>
-          <Image
-            src={`/setup${steps[selectedStep].image}`}
-            alt={`Setup - ${steps[selectedStep].title}`}
-            width={600}
-            height={400}
-            priority={false}
-            style={{ zIndex: "1" }}
-          />
+          <ImageWrapper>
+            <Image
+              src={`/setup${steps[selectedStep].image}`}
+              alt={`Setup - ${steps[selectedStep].title}`}
+              width={600}
+              height={400}
+              priority={false}
+              style={{ zIndex: "1" }}
+            />
+          </ImageWrapper>
           <Image
             src="/setup-design-element.svg"
             alt="Setup Design Element"

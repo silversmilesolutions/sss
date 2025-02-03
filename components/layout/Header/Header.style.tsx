@@ -15,6 +15,7 @@ export const Container = styled.div`
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray200};
   padding-bottom: 1rem;
+  position: relative;
 `;
 
 export const Logo = styled.div`
@@ -45,5 +46,38 @@ export const NavLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
+  }
+`;
+
+export const MobileMenuButton = styled.button`
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: flex;
+  }
+`;
+
+export const MobileNav = styled.nav<{ $isOpen: boolean }>`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: ${({ theme }) => theme.colors.background};
+    padding: 1rem;
+    gap: 1rem;
+    opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
+    visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.gray200};
+    z-index: 1;
   }
 `;

@@ -3,8 +3,10 @@ import {
   FeatureDescription,
   FeatureTitle,
   Grid,
+  BackgroundIconsWrapper,
   Section,
   Title,
+  FeatureContainer,
 } from "./WhyChooseUs.style";
 import Image from "next/image";
 
@@ -43,27 +45,29 @@ const features = [
 export function WhyChooseUs() {
   return (
     <Section>
-      <Image
-        src="/thumbs-up.svg"
-        alt="Thumbs Up"
-        width={92}
-        height={92}
-        style={{ position: "absolute", left: "4rem", bottom: "0" }}
-      />
-      <Image
-        src="/envelop-horn.svg"
-        alt="Envelop Horn"
-        width={92}
-        height={92}
-        style={{ position: "absolute", right: "10rem" }}
-      />
+      <BackgroundIconsWrapper>
+        <Image
+          src="/thumbs-up.svg"
+          alt="Thumbs Up"
+          width={92}
+          height={92}
+          style={{ position: "absolute", left: "4rem", bottom: "0" }}
+        />
+        <Image
+          src="/envelop-horn.svg"
+          alt="Envelop Horn"
+          width={92}
+          height={92}
+          style={{ position: "absolute", right: "10rem" }}
+        />
+      </BackgroundIconsWrapper>
       <Container>
         <Title>
           Why Dental Clinics
           <br />
           Choose Us
         </Title>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <FeatureContainer>
           <Grid>
             {features.map((feature, index) => (
               <div key={index}>
@@ -80,7 +84,7 @@ export function WhyChooseUs() {
               height={545}
             />
           </div>
-        </div>
+        </FeatureContainer>
       </Container>
     </Section>
   );
